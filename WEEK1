@@ -1,0 +1,15 @@
+def convert_temperature(temp, unit):
+    if unit == 'F':
+        converted = (temp - 32) * 5 / 9
+    elif unit == 'C':
+        converted = (temp * 9 / 5) + 32
+    else:
+        return "Invalid unit. Use 'F' or 'C'."
+    return round(converted, 2)
+try:
+    temp = float(input("Enter the temperature value: "))
+    unit = input("Enter the unit of the input temperature ('F' for Fahrenheit, 'C' for Celsius): ").upper()
+    result = convert_temperature(temp, unit)
+    print(f"Converted temperature: {result}")
+except ValueError:
+    print("Please enter a valid number for temperature.")
